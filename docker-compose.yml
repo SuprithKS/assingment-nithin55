@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+ 
+    image: myapp:${IMAGE_TAG:-latest}
+ 
+    container_name: springboot-app
+ 
+    ports:
+      - "8081:8080"
+ 
+    restart: unless-stopped
